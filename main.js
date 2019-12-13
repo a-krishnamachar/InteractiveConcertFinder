@@ -97,14 +97,15 @@ function checkArtist(music_brainz_id){
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       var e = JSON.parse(this.responseText);
-      console.log(e);
-      console.log(e.resultsPage.results.event);
+      //console.log(e);
+      //console.log(e.resultsPage.results.event);
       var events = e.resultsPage.results.event;
       //console.log(events);
       for (var i = 0; i < events.length; i++){
         if (events[i].location.city.includes(location)){
           console.log("cha-ching");
           console.log(events[i]);
+          alert(events[i].displayName);
         }
         else{
           console.log("nah fam");
