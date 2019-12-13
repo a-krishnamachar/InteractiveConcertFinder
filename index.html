@@ -12,8 +12,8 @@
 <!-- https://github.com/fxb/javascript-last.fm-api -->
 
 <body>
-  <header>
-    <h1>Final Project Gang</h1>
+  <header id="header">
+    <h1 id="title">Find Your Vibe</h1>
     <form id="form">
       <p> please submit this form first</p>
       <input type="search" id="searchCity" placeholder="What city are you in?">
@@ -26,6 +26,10 @@
       <button id="submitItem">Add</button>
     </form>
   </header>
+
+  <div class="backgroundPic">
+    <img src="concert.jpg" alt="concertPic" height="100%" width="100%">
+  </div>
 
   <script type="text/javascript" src="lastfm.api.md5.js"></script>
   <script type="text/javascript" src="lastfm.api.js"></script>

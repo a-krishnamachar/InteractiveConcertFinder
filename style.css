@@ -1,0 +1,20 @@
+.backgroundPic{
+  opacity: 0.75;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+}
+
+.header{
+  z-index: 10;
+  text-align: center;
+}
+
+#title{
+  text-align: center;
+  font-size: 69px;
+}
+
+#form{
+  text-align: center;
+}
