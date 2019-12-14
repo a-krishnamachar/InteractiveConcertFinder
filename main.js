@@ -64,23 +64,26 @@ document.getElementById("submitItem").addEventListener("click", function(event) 
         checkArtist(normal.similarartists.artist[i].mbid);
       }
       console.log("PAY ATTENTION TO ME");
-      console.log(x);
+      // console.log(x);
+      // alert(x[0]);
+      // for (var i=0; i<x.length; i++){
+      //   alert(x[i]);
+      //   console.log(x[i]);
+      // }
       // renderCode(x);
       // COPIED
-      var list = document.createElement("UL");
+      // var list = document.createElement("UL");
+      //
+      // x.forEach(function (item) {
+      //   var li = document.createElement("LI");
+      //   li.innerHTML = item;
+      //   list.appendChild(li);
+      // });
+      // var app = document.getElementById("listGang");
+      // app.appendChild(list);
+      // console.log("HELLOOOOO");
+      // console.log(list);
 
-      x.forEach(function (item) {
-        var li = document.createElement("LI");
-        li.innerHTML = item;
-        list.appendChild(li);
-      });
-      var app = document.getElementById("listGang");
-      app.appendChild(list);
-      console.log("HELLOOOOO");
-      console.log(list);
-      for (var i=0; i<x.length; i++){
-        alert(x[i])
-      }
 
       // END COPIED
     }
@@ -108,6 +111,7 @@ document.getElementById("submitItem").addEventListener("click", function(event) 
 // })
 
 var x = [];
+var list = document.createElement("UL");
 
 // Songkick
 function checkArtist(music_brainz_id){
@@ -131,13 +135,18 @@ function checkArtist(music_brainz_id){
           if (events[i].location.city.includes(location)){
             console.log("cha-ching");
             console.log(events[i]);
-            // alert(events[i].displayName);
+            alert(events[i].displayName);
             x.push(events[i].displayName);
+              var li = document.createElement("LI");
+              li.innerHTML = events[i].displayName;
+              list.appendChild(li);
           }
           else{
             console.log("nah fam");
           }
         }
+        console.log(list);
+        document.getElementById("listGang").appendChild(list);
 
       }
     } else if (this.readyState == 4) {
