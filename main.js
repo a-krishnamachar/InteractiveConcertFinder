@@ -5,8 +5,6 @@ var urlBaseSK = "https://api.songkick.com/api/3.0/artists/mbid:";
 var urlMidSK = "/calendar.json?apikey=";
 var urlWholeSK = "https://api.songkick.com/api/3.0/artists/mbid:{music_brainz_id}/calendar.json?apikey={your_api_key}"
 
-/* Create a cache object */
-// var cache = new LastFMCache();
 
 /* Create a LastFM object */
 var lastfm = new LastFM({
@@ -20,6 +18,13 @@ var lastfm = new LastFM({
 var result1;
 
 document.getElementById("submitItem").addEventListener("click", function(event) {
+  var list = [];
+  // console.log(list);
+  // for (var i=0; i<list.length; i++){
+  //   list.removeChild(list[i]);
+  //   list[i].innerHTML = "";
+  // }
+
   var completeRequest = new XMLHttpRequest();
   event.preventDefault();
 
@@ -31,21 +36,10 @@ document.getElementById("submitItem").addEventListener("click", function(event) 
   // console.log(document.getElementById("searchBox").value);
   var artist = document.getElementById("searchBox").value;
 
-  // lastfm.artist.getInfo({artist: artist}, {success: function(data){
-  //   var help = (artist.responseText);
-  //   console.log(document.getElementById("searchBox").value);
-  //   console.log(help);
-  // }, error: function(code, message){
-  //   console.log("Nope");
-  // }});
-
   lastfm.artist.getSimilar({artist: artist, api_key: apiKeyLFM}, {success: function(data){
-    // console.log(this.responseText);
-    // result1 = JSON.parse(this.responseText);
-    // console.log(result1);
 
   }, error: function(code, message){
-    console.log("fuck off");
+    console.log("go away");
   }});
 
   completeRequest.onreadystatechange = function(){
@@ -59,33 +53,16 @@ document.getElementById("submitItem").addEventListener("click", function(event) 
       console.log(normal.similarartists);
       // console.log(normal.similarartists.artist[1].name);
 
+      console.log(list);
+      list = document.createElement("UL");
+
+      console.log(list);
+      document.getElementById("listGang").innerHTML = "";
       for (var i=0; i<100; i++){
         // console.log(normal.similarartists.artist[i].mbid);
         checkArtist(normal.similarartists.artist[i].mbid);
       }
       console.log("PAY ATTENTION TO ME");
-      // console.log(x);
-      // alert(x[0]);
-      // for (var i=0; i<x.length; i++){
-      //   alert(x[i]);
-      //   console.log(x[i]);
-      // }
-      // renderCode(x);
-      // COPIED
-      // var list = document.createElement("UL");
-      //
-      // x.forEach(function (item) {
-      //   var li = document.createElement("LI");
-      //   li.innerHTML = item;
-      //   list.appendChild(li);
-      // });
-      // var app = document.getElementById("listGang");
-      // app.appendChild(list);
-      // console.log("HELLOOOOO");
-      // console.log(list);
-
-
-      // END COPIED
     }
     else if (this.readyState == 4){
       // this.status !== 200, error from server
@@ -111,13 +88,15 @@ document.getElementById("submitItem").addEventListener("click", function(event) 
 // })
 
 var x = [];
-var list = document.createElement("UL");
+list = document.createElement("UL");
 
 // Songkick
 function checkArtist(music_brainz_id){
+
   var xhttp = new XMLHttpRequest();
   // var location = document.getElementById("searchCity").value;
   // console.log(location);
+
   var location = "Chicago";
 
   xhttp.onreadystatechange = function() {
@@ -127,6 +106,7 @@ function checkArtist(music_brainz_id){
       //console.log(e);
       //console.log(e.resultsPage.results.event);
       var events = e.resultsPage.results.event;
+      var eventlist = document.createElement("UL");
       //console.log(events);
       //NOT DONE IN THE LEAST! FIX THE UNCAUGHT TYPEERRORS!
       if (e.resultsPage.results.totalEntries != 0) {
@@ -135,20 +115,22 @@ function checkArtist(music_brainz_id){
           if (events[i].location.city.includes(location)){
             console.log("cha-ching");
             console.log(events[i]);
-            alert(events[i].displayName);
-            x.push(events[i].displayName);
-              var li = document.createElement("LI");
-              li.innerHTML = events[i].displayName;
-              list.appendChild(li);
+            //alert(events[i].displayName);
+            // x.push(events[i].displayName);
+            var li = document.createElement("LI");
+            li.innerHTML = events[i].displayName;
+            eventlist.appendChild(li);
+            console.log(list);
           }
           else{
             console.log("nah fam");
           }
         }
         console.log(list);
-        document.getElementById("listGang").appendChild(list);
-
+        console.log(document.getElementById("listGang").childNodes.length);
       }
+      // document.getElementById("listGang").innerHTML = "";
+      document.getElementById("listGang").appendChild(eventlist);
     } else if (this.readyState == 4) {
       // this.status !== 200, error from server
       console.log("milk");
@@ -163,21 +145,9 @@ function checkArtist(music_brainz_id){
 
 }
 
+function showElement() {
+  document.getElementById("cityDiv").style.display = "none";
+  // document.getElementById("cityDiv").style.visibility = "hidden";
 
-//https://gomakethings.com/two-more-ways-to-create-html-from-an-array-of-data-with-vanilla-js/
-function renderCode(x) {
-
-  var list = document.createElement("UL");
-
-  x.forEach(function (item) {
-    var li = document.createElement("LI");
-    li.innerHTML = item;
-    list.appendChild(li);
-  });
-  var app = document.getElementById("listGang");
-  app.appendChild(list);
-  console.log("HELLOOOOO");
-  console.log(list);
-  //document.write(x);
 
 }

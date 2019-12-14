@@ -14,13 +14,15 @@
 <body>
   <header id="header">
     <h1 id="title">Find Your Vibe</h1>
-    <form id="form">
+    <div id="cityDiv">
+    <form id="cityForm" >
       <p> please submit this form first</p>
       <input type="search" id="searchCity" placeholder="What city are you in?">
-      <button id="submitCity">Add</button>
+      <button id="submitCity" onclick="showElement()"> Add</button>
     </form>
+  </div>
 
-    <form id="form">
+    <form id="artistForm">
       <p> please submit this form after searching the previous one </p>
       <input type="search" id="searchBox" placeholder="What artist are you searching for?">
       <button id="submitItem">Add</button>
