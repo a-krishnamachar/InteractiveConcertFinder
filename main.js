@@ -19,11 +19,7 @@ var result1;
 
 document.getElementById("submitItem").addEventListener("click", function(event) {
   var list = [];
-  // console.log(list);
-  // for (var i=0; i<list.length; i++){
-  //   list.removeChild(list[i]);
-  //   list[i].innerHTML = "";
-  // }
+
 
   var completeRequest = new XMLHttpRequest();
   event.preventDefault();
@@ -52,7 +48,6 @@ document.getElementById("submitItem").addEventListener("click", function(event) 
       normal = JSON.parse(JSONResponse);
       console.log(normal.similarartists);
       // console.log(normal.similarartists.artist[1].name);
-
 
       list = document.createElement("UL");
 
@@ -93,10 +88,9 @@ list = document.createElement("UL");
 function checkArtist(music_brainz_id){
 
   var xhttp = new XMLHttpRequest();
-  // var location = document.getElementById("searchCity").value;
-  // console.log(location);
+  var location = document.getElementById("searchCity").value;
 
-  var location = "Chicago";
+  // var location = "Chicago";
 
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -147,6 +141,4 @@ function checkArtist(music_brainz_id){
 function showElement() {
   document.getElementById("cityDiv").style.display = "none";
   // document.getElementById("cityDiv").style.visibility = "hidden";
-
-
 }
