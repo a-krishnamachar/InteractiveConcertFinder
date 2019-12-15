@@ -72,7 +72,6 @@ document.getElementById("submitItem").addEventListener("click", function(event) 
 
   var stringToPass = "?method=artist.getsimilar&artist=" + artist + "&api_key=" + apiKeyLFM + "&format=json";
 
-
   completeRequest.open("POST", "https://ws.audioscrobbler.com/2.0/" + stringToPass, true);
   completeRequest.setRequestHeader("Content-type", "application/json");
   completeRequest.setRequestHeader("x-api-key", apiKeyLFM);
