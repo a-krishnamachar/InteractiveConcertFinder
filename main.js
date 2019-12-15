@@ -53,7 +53,7 @@ document.getElementById("submitItem").addEventListener("click", function(event) 
       console.log(normal.similarartists);
       // console.log(normal.similarartists.artist[1].name);
 
-      console.log(list);
+    
       list = document.createElement("UL");
 
       console.log(list);
