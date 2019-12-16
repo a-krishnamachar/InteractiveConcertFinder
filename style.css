@@ -12,10 +12,29 @@
   z-index: 10;
   text-align: center;
 }
+#textLine{
+  color: blue;
+  font-family: fantasy;
+  padding-left: 40px;
+  font-size: 30px;
+}
 
 #title{
   text-align: center;
+  font-style: bold;
   font-size: 69px;
+  font-family: Optima;
+  color: rgb(6, 60, 236);
+}
+#subtitle {
+  font-size: 20px;
+  font-family: Optima;
+  color: rgb(218, 24, 208);
+}
+#nb {
+  font-family: fantasy;
+  color: white;
+  text-align: center;
 }
 
 #artistForm{
@@ -27,5 +46,7 @@
 
 }
 #listGang {
-  color: rgb(250,100,100);
+  font-family: fantasy;
+  font-size: 20px;
+  color: rgb(255, 14, 223);
 }

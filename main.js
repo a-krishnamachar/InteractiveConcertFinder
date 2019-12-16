@@ -5,6 +5,7 @@ var urlBaseSK = "https://api.songkick.com/api/3.0/artists/mbid:";
 var urlMidSK = "/calendar.json?apikey=";
 var urlWholeSK = "https://api.songkick.com/api/3.0/artists/mbid:{music_brainz_id}/calendar.json?apikey={your_api_key}"
 
+//https://www.last.fm/api/downloads
 
 /* Create a LastFM object */
 var lastfm = new LastFM({
@@ -12,8 +13,6 @@ var lastfm = new LastFM({
   apiSecret : '260fbdb1ffbf5ee5b819c653a37b6cd7'
   // cache     : cache
 });
-
-// /* Load some artist info. */
 
 var result1;
 
@@ -44,7 +43,7 @@ document.getElementById("submitItem").addEventListener("click", function(event) 
       // console.log(this.responseText);
 
       var JSONResponse = this.responseText;
-      //parse not stringify #yeet
+
       normal = JSON.parse(JSONResponse);
       console.log(normal.similarartists);
       // console.log(normal.similarartists.artist[1].name);
@@ -90,17 +89,13 @@ function checkArtist(music_brainz_id){
   var xhttp = new XMLHttpRequest();
   var location = document.getElementById("searchCity").value;
 
-  // var location = "Chicago";
-
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       var e = JSON.parse(this.responseText);
       console.log(e);
-      //console.log(e);
       //console.log(e.resultsPage.results.event);
       var events = e.resultsPage.results.event;
       var eventlist = document.createElement("UL");
-      //console.log(events);
       //NOT DONE IN THE LEAST! FIX THE UNCAUGHT TYPEERRORS!
       if (e.resultsPage.results.totalEntries != 0) {
 
@@ -108,25 +103,28 @@ function checkArtist(music_brainz_id){
           if (events[i].location.city.includes(location)){
             console.log("cha-ching");
             console.log(events[i]);
-            //alert(events[i].displayName);
-            // x.push(events[i].displayName);
             var li = document.createElement("LI");
             li.innerHTML = events[i].displayName;
             eventlist.appendChild(li);
-            console.log(list);
           }
           else{
-            console.log("nah fam");
+            console.log("nope, errorrrr");
+
           }
         }
         console.log(list);
+        console.log("PAOIWEHFASIHF");
         console.log(document.getElementById("listGang").childNodes.length);
+
+          // var li = document.createElement("LI");
+          // li.innerHTML = "No related artists are performing in this city in the near future. Try a different artist!";
+          // eventlist.appendChild(li);
       }
-      // document.getElementById("listGang").innerHTML = "";
+
       document.getElementById("listGang").appendChild(eventlist);
     } else if (this.readyState == 4) {
       // this.status !== 200, error from server
-      console.log("milk");
+      console.log("hmm nope");
       console.log(this.responseText);
 
     }
@@ -135,10 +133,15 @@ function checkArtist(music_brainz_id){
   xhttp.open("GET", urlBaseSK + music_brainz_id + urlMidSK + apiKeySK, true);
   xhttp.setRequestHeader("x-api-key", apiKeySK);
   xhttp.send();
-
 }
 
 function showElement() {
-  document.getElementById("cityDiv").style.display = "none";
-  // document.getElementById("cityDiv").style.visibility = "hidden";
+  var x = document.getElementById("textLine");
+  if (document.getElementById("listGang").childNodes.length = 0) {
+    console.log(document.getElementById("listGang").childNodes.length);
+    x.style.display = "none";
+  } else {
+    console.log(document.getElementById("listGang").childNodes.length);
+    x.style.display = "block";
+  }
 }
