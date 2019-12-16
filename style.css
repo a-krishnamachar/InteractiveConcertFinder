@@ -1,6 +1,6 @@
 .backgroundPic{
   /* FIX PICTURE SIZE!!!!! */
-  opacity: 0.75;
+  opacity: 0.65;
   position: fixed;
   top: 0;
   z-index: -1;
@@ -30,7 +30,9 @@
   font-family: 'Optima';
   background-color: rgb(240,240,240);
   color: rgb(167, 20, 159);
-  border: none;
+  border-style: groove;
+  border-width: 2px;
+  border-color: rgb(90, 90, 90);
 }
 #submitItem:hover {
   color: rgb(255, 14, 223);
@@ -45,7 +47,7 @@
   text-align: center;
 }
 #textLine{
-  color: blue;
+  color: #266bff;
   font-family: fantasy;
   padding-left: 40px;
   font-size: 30px;
@@ -54,15 +56,21 @@
 #title{
   text-align: center;
   font-style: bold;
-  font-size: 69px;
+  font-size: 74px;
   font-family: Optima;
-  color: rgb(6, 60, 236);
+  color: #266bff;
+  position: relative;
+  top: 25px;
 }
+
 #subtitle {
-  font-size: 20px;
+  font-size: 26px;
   font-family: Optima;
-  color: rgb(218, 24, 208);
+  color: #de26ff;
+  position: relative;
+  top: 16px;
 }
+
 #nb {
   font-family: fantasy;
   color: white;
@@ -77,8 +85,17 @@
   text-align: center;
 
 }
+
 #listGang {
   font-family: fantasy;
   font-size: 20px;
-  color: rgb(255, 14, 223);
+  color: rgb(255, 183, 38);
+}
+
+#listBox{
+  padding-top: 10px;
+  border-style: groove;
+  border-width: 2px;
+  border-color: rgb(255, 183, 38);
+  background-color: rgb(90, 90, 90);
 }
