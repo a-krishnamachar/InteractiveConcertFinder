@@ -8,6 +8,38 @@
   width: 100%;
 }
 
+#searchCity {
+  font-family: 'Optima';
+}
+#searchCity:hover {
+  outline: none;
+}
+#searchCity:focus {
+  outline: none;
+}
+#searchBox {
+  font-family: 'Optima';
+}
+#searchBox:hover {
+  outline: none;
+}
+#searchBox:focus {
+  outline: none;
+}
+#submitItem {
+  font-family: 'Optima';
+  background-color: rgb(240,240,240);
+  color: rgb(167, 20, 159);
+  border: none;
+}
+#submitItem:hover {
+  color: rgb(255, 14, 223);
+  background-color: rgb(255,255,255);
+  border: none;
+}
+#submitItem:focus {outline:0;
+}
+
 .header{
   z-index: 10;
   text-align: center;
