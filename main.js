@@ -107,7 +107,7 @@ function checkArtist(music_brainz_id){
     } else if (this.readyState == 4) {
       // this.status !== 200, error from server
       //console.log("hmm nope");
-      //console.log(this.responseText);
+      console.log(this.responseText);
 
     }
   };
