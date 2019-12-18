@@ -8,6 +8,8 @@ This project is meant to help listeners discover related musical artists in conc
 # Usage
 1. Input a city
 2. Input a musical artist
+
+    **NOTE**: Uppercase, lowercase, and even *typos* are allowed in typing. For example, if you meant to type **"Coldplay"**, but instead typed *"Coldpla"*, this would still search for **"Coldplay"**.
 3. Click "SEARCH"
 4. Go to a concert and *find your vibe*! (not part of the webpage ;) )
 
