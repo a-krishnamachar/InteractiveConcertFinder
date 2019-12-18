@@ -11,50 +11,44 @@ var urlWholeSK = "https://api.songkick.com/api/3.0/artists/mbid:{music_brainz_id
 var lastfm = new LastFM({
   apiKey    : 'ff816a82b0283ee65eed14160f8902ce',
   apiSecret : '260fbdb1ffbf5ee5b819c653a37b6cd7'
-  // cache     : cache
 });
 
 var result1;
 
-//this is linked to the "Search" button
+// this is linked to the "Search" button
 document.getElementById("submitItem").addEventListener("click", function(event) {
-  var list = [];
 
+  // set variables
+  var list = [];
   var completeRequest = new XMLHttpRequest();
   event.preventDefault();
-
   var data = {
     text: document.getElementById("searchBox").value
   }
   var artist = document.getElementById("searchBox").value;
 
-  //calls last.fm API through lastfm.api.js - helper API method on last.fm/api/downloads
+  // calls last.fm API through lastfm.api.js - helper API method on last.fm/api/downloads
   lastfm.artist.getSimilar({artist: artist, api_key: apiKeyLFM}, {success: function(data){
   }, error: function(code, message){
-    console.log("go away");
+    //console.log("go away");
   }});
 
   completeRequest.onreadystatechange = function(){
     var normal = "";
     if(this.readyState == 4 && this.status == 200) {
       // console.log(this.responseText);
-
       var JSONResponse = this.responseText;
-
       normal = JSON.parse(JSONResponse);
       console.log(normal.similarartists);
       // console.log(normal.similarartists.artist[1].name);
-
       list = document.createElement("UL");
-
       console.log(list);
-      //clears out concerts every time "Search" is clicked
+      // clears out concerts every time "Search" is clicked
       document.getElementById("listGang").innerHTML = "";
       for (var i=0; i<100; i++){
-        //this calls checkArtist function - hits Songkick api to find concerts in the desired city
+        // this calls checkArtist function - hits Songkick api to find concerts in the desired city
         checkArtist(normal.similarartists.artist[i].mbid);
       }
-
     }
     else if (this.readyState == 4){
       // this.status !== 200, error from server
@@ -84,7 +78,7 @@ function checkArtist(music_brainz_id){
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       var e = JSON.parse(this.responseText);
-      console.log(e);
+      //console.log(e);
 
       var events = e.resultsPage.results.event;
       var eventlist = document.createElement("UL");
@@ -94,26 +88,26 @@ function checkArtist(music_brainz_id){
 
         for (var i = 0; i < events.length; i++){
           if (events[i].location.city.includes(location)){
-            console.log("cha-ching");
-            console.log(events[i]);
+            //console.log("cha-ching");
+            //console.log(events[i]);
             var li = document.createElement("LI");
             li.innerHTML = events[i].displayName;
             eventlist.appendChild(li);
           }
           else{
-            console.log("nope, errorrrr");
+            //console.log("nope, errorrrr");
 
           }
         }
-        console.log(document.getElementById("listGang").childNodes.length);
+        //console.log(document.getElementById("listGang").childNodes.length);
 
       }
       //actually visually appends to the list
       document.getElementById("listGang").appendChild(eventlist);
     } else if (this.readyState == 4) {
       // this.status !== 200, error from server
-      console.log("hmm nope");
-      console.log(this.responseText);
+      //console.log("hmm nope");
+      //console.log(this.responseText);
 
     }
   };
@@ -128,10 +122,10 @@ function checkArtist(music_brainz_id){
 function showElement() {
   var x = document.getElementById("textLine");
   if (document.getElementById("listGang").childNodes.length = 0) {
-    console.log(document.getElementById("listGang").childNodes.length);
+    //console.log(document.getElementById("listGang").childNodes.length);
     x.style.display = "none";
   } else {
-    console.log(document.getElementById("listGang").childNodes.length);
+    //console.log(document.getElementById("listGang").childNodes.length);
     x.style.display = "block";
   }
 }
