@@ -18,6 +18,8 @@ This project is meant to help listeners discover related musical artists in conc
 - Artist: Coldplay
 - Result:
 
+![Example Query](https://github.com/wustlcse204/10-final-project-krishnamachar-gittleman/blob/master/findyourvibe.png)
+
 # Additional Info:
 *APIs Used (2)*:
 - **Songkick**
