@@ -20,16 +20,12 @@ var result1;
 document.getElementById("submitItem").addEventListener("click", function(event) {
   var list = [];
 
-
   var completeRequest = new XMLHttpRequest();
   event.preventDefault();
 
   var data = {
     text: document.getElementById("searchBox").value
   }
-
-  /* Load some artist info. */
-
   var artist = document.getElementById("searchBox").value;
 
   lastfm.artist.getSimilar({artist: artist, api_key: apiKeyLFM}, {success: function(data){
@@ -53,10 +49,9 @@ document.getElementById("submitItem").addEventListener("click", function(event) 
       console.log(list);
       document.getElementById("listGang").innerHTML = "";
       for (var i=0; i<100; i++){
-        // console.log(normal.similarartists.artist[i].mbid);
         checkArtist(normal.similarartists.artist[i].mbid);
       }
-      console.log("PAY ATTENTION TO ME");
+
     }
     else if (this.readyState == 4){
       // this.status !== 200, error from server
@@ -87,7 +82,7 @@ function checkArtist(music_brainz_id){
     if (this.readyState == 4 && this.status == 200) {
       var e = JSON.parse(this.responseText);
       console.log(e);
-      //console.log(e.resultsPage.results.event);
+
       var events = e.resultsPage.results.event;
       var eventlist = document.createElement("UL");
 
@@ -129,6 +124,7 @@ function checkArtist(music_brainz_id){
   xhttp.send();
 }
 
+//tried playing around with this, but didn't work to our satisfaction :/
 function showElement() {
   var x = document.getElementById("textLine");
   if (document.getElementById("listGang").childNodes.length = 0) {

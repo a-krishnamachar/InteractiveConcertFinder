@@ -17,6 +17,8 @@ This project is meant to help listeners discover related musical artists in conc
 - New York
 - Coldplay
 
+
+
 # Additional Info:
 *APIs Used (2)*:
 - **Songkick**
@@ -30,7 +32,9 @@ This project is meant to help listeners discover related musical artists in conc
 - We also utilized a background image for a similar reason, and to eliminate "whitespace".
 
 *Disclaimer*:
+- We discussed with Prof Clapp about not doing the "notify me when they announce a tour" popup (described in our proposal). In his words, it would "be beyond the scope of this course as it would need passive updating and be hard to test". So we didn't include that part.
 - We added a "N.B." section at the end so as to keep page viewers informed of the page's purpose, as well as links to ticketmaster.com and stubhub.com so they could go straight to booking artists + shows!
+- We switched APIs from Ticketmaster/Eventbrite to **Songkick** as per Prof Clapp's suggestion.
 
 
 
