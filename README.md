@@ -31,7 +31,7 @@ This project is meant to help listeners discover related musical artists in conc
 
 *Styling*:
 - We used a color scheme as discussed in class - utilizing complementary colors (blue and orange) to keep viewers engaged and not have "eye fatigue" as they viewed our page.
-- We also utilized a background image for a similar reason, and to eliminate "whitespace".
+- We also utilized a background image for a similar reason, and to mitigate "whitespace".
 
 *Notes*:
 - We discussed with Prof Clapp about not doing the "notify me when they announce a tour" popup (described in our proposal). In his words, it would "be beyond the scope of this course as it would need passive updating and be hard to test". So we didn't include that part.
