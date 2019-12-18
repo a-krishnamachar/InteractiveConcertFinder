@@ -29,12 +29,12 @@
 #submitItem {
   font-family: 'Optima';
   background-color: rgb(240,240,240);
-  color: rgb(167, 20, 159);
+  color: rgb(139, 27, 13);
   border: none;
 
 }
 #submitItem:hover {
-  color: rgb(255, 14, 223);
+  color: rgb(255, 62, 14);
   background-color: rgb(255,255,255);
   border: none;
 
@@ -51,7 +51,7 @@
   text-align: center;
 }
 #textLine{
-  /* color: #266bff; */
+
   color: rgb(0, 174, 255);
 
   font-family: fantasy;
@@ -76,7 +76,7 @@
 #subtitle {
   font-size: 26px;
   font-family: Optima;
-  color: #de26ff;
+  color: #f14317;
   position: relative;
   top: 16px;
 }
@@ -100,11 +100,7 @@
   font-family: fantasy;
   font-size: 20px;
   /* color: rgb(255, 183, 38); */
-  color: rgb(0,206,209);
-  /* border-style: groove;
-  border-width: 1px;
-  border-color: rgb(212, 212, 212);
-  background-color: rgb(90, 90, 90); */
+  color: rgb(10, 175, 252);
 
 }
 

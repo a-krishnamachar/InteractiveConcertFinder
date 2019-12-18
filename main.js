@@ -16,6 +16,7 @@ var lastfm = new LastFM({
 
 var result1;
 
+//
 document.getElementById("submitItem").addEventListener("click", function(event) {
   var list = [];
 
@@ -28,11 +29,10 @@ document.getElementById("submitItem").addEventListener("click", function(event) 
   }
 
   /* Load some artist info. */
-  // console.log(document.getElementById("searchBox").value);
+
   var artist = document.getElementById("searchBox").value;
 
   lastfm.artist.getSimilar({artist: artist, api_key: apiKeyLFM}, {success: function(data){
-
   }, error: function(code, message){
     console.log("go away");
   }});
@@ -74,12 +74,6 @@ document.getElementById("submitItem").addEventListener("click", function(event) 
 
 });
 
-// Post Malone's mbid
-// document.getElementById("submitCity").addEventListener("click", function(event) {
-//   event.preventDefault();
-//   checkArtist("	b1e26560-60e5-4236-bbdb-9aa5a8d5ee19");
-// })
-
 var x = [];
 list = document.createElement("UL");
 
@@ -96,7 +90,7 @@ function checkArtist(music_brainz_id){
       //console.log(e.resultsPage.results.event);
       var events = e.resultsPage.results.event;
       var eventlist = document.createElement("UL");
-      //NOT DONE IN THE LEAST! FIX THE UNCAUGHT TYPEERRORS!
+
       if (e.resultsPage.results.totalEntries != 0) {
 
         for (var i = 0; i < events.length; i++){
