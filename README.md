@@ -13,6 +13,9 @@ This project is meant to help listeners discover related musical artists in conc
 3. Click "SEARCH"
 4. Go to a concert and *find your vibe*! (not part of the webpage ;) )
 
+*Sample Inputs*:
+- New York
+- Coldplay
 
 # Additional Info:
 *APIs Used (2)*:
