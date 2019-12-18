@@ -16,7 +16,7 @@ var lastfm = new LastFM({
 
 var result1;
 
-//
+//this is linked to the "Search" button
 document.getElementById("submitItem").addEventListener("click", function(event) {
   var list = [];
 
@@ -28,6 +28,7 @@ document.getElementById("submitItem").addEventListener("click", function(event) 
   }
   var artist = document.getElementById("searchBox").value;
 
+  //calls last.fm API through lastfm.api.js - helper API method on last.fm/api/downloads
   lastfm.artist.getSimilar({artist: artist, api_key: apiKeyLFM}, {success: function(data){
   }, error: function(code, message){
     console.log("go away");
@@ -47,8 +48,10 @@ document.getElementById("submitItem").addEventListener("click", function(event) 
       list = document.createElement("UL");
 
       console.log(list);
+      //clears out concerts every time "Search" is clicked
       document.getElementById("listGang").innerHTML = "";
       for (var i=0; i<100; i++){
+        //this calls checkArtist function - hits Songkick api to find concerts in the desired city
         checkArtist(normal.similarartists.artist[i].mbid);
       }
 
@@ -72,7 +75,7 @@ document.getElementById("submitItem").addEventListener("click", function(event) 
 var x = [];
 list = document.createElement("UL");
 
-// Songkick
+// Songkick function!
 function checkArtist(music_brainz_id){
 
   var xhttp = new XMLHttpRequest();
@@ -86,6 +89,7 @@ function checkArtist(music_brainz_id){
       var events = e.resultsPage.results.event;
       var eventlist = document.createElement("UL");
 
+      //only runs if there are actually concerts for a selected artist!
       if (e.resultsPage.results.totalEntries != 0) {
 
         for (var i = 0; i < events.length; i++){
@@ -101,15 +105,10 @@ function checkArtist(music_brainz_id){
 
           }
         }
-        console.log(list);
-        console.log("PAOIWEHFASIHF");
         console.log(document.getElementById("listGang").childNodes.length);
 
-          // var li = document.createElement("LI");
-          // li.innerHTML = "No related artists are performing in this city in the near future. Try a different artist!";
-          // eventlist.appendChild(li);
       }
-
+      //actually visually appends to the list
       document.getElementById("listGang").appendChild(eventlist);
     } else if (this.readyState == 4) {
       // this.status !== 200, error from server
@@ -119,6 +118,7 @@ function checkArtist(music_brainz_id){
     }
   };
 
+  //submits xhttp request
   xhttp.open("GET", urlBaseSK + music_brainz_id + urlMidSK + apiKeySK, true);
   xhttp.setRequestHeader("x-api-key", apiKeySK);
   xhttp.send();
