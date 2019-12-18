@@ -14,10 +14,9 @@ This project is meant to help listeners discover related musical artists in conc
 4. Go to a concert and *find your vibe*! (not part of the webpage ;) )
 
 *Sample Inputs*:
-- New York
-- Coldplay
-
-
+- City: New York
+- Artist: Coldplay
+- Result:
 
 # Additional Info:
 *APIs Used (2)*:
