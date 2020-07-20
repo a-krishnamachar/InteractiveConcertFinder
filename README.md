@@ -1,4 +1,4 @@
-# CSE204 - Final Project - Find Your Vibe
+# Find Your Vibe
 
 - Aditya Krishnamachar
 - Sam Gittleman
@@ -29,11 +29,6 @@ This project is meant to help listeners discover related musical artists in conc
 - Our interactive feature is the content below "Related Shows" - the list of concerts that appears! Upon searching a new artist, the section **refreshes** so as not to confuse the viewer as to which artist the concerts are actually related to.
 - Our creative feature centers on our use of two different APIs, and one linking off of the other. We spent a good deal of time looking into how to accomplish this online / at TA hours. Additionally, we knew that the "find this artist's concerts!" feature was pretty common/overused, so we wanted to put our spin on it. We hope that any users will appreciate this feature and perhaps use it to find new artists! (*note: Aditya has already found a similar artist to ODESZA in Seattle and is going to go see them next year! (artist is Cashmere Cat)*)
 
-*Styling*:
-- We used a color scheme as discussed in class - utilizing complementary colors (blue and orange) to keep viewers engaged and not have "eye fatigue" as they viewed our page.
-- We also utilized a background image for a similar reason, and to mitigate "whitespace".
 
 *Notes*:
-- We discussed with Prof Clapp about not doing the "notify me when they announce a tour" popup (described in our proposal). In his words, it would "be beyond the scope of this course as it would need passive updating and be hard to test". So we didn't include that part.
 - We added a "N.B." section at the end so as to keep page viewers informed of the page's purpose, as well as links to ticketmaster.com and stubhub.com so they could go straight to booking artists + shows!
-- We switched APIs from Ticketmaster/Eventbrite to **Songkick** as per Prof Clapp's suggestion.
