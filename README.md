@@ -5,6 +5,8 @@
 
 This project is meant to help listeners discover related musical artists in concert near them!
 
+https://a-krishnamachar.github.io/findyourvibe/
+
 # Usage
 1. Input a city
 2. Input a musical artist
